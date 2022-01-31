@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
+import androidx.navigation.fragment.findNavController
 import com.example.foody.data.MealAndDietType
 import com.example.foody.databinding.FragmentRecipesBottomSheetBinding
 import com.example.foody.util.Constants.Companion.DEFAULT_DIET_TYPE
@@ -70,7 +71,8 @@ class RecipesBottomSheetFragment : BottomSheetDialogFragment() {
                 MealAndDietType(mealTypeChip, mealTypeChipId, dietTypeChip, dietTypeChipId)
             )
 
-            dismiss()
+            val action = RecipesBottomSheetFragmentDirections.actionRecipesBottomSheetFragmentToRecipesFragment(true)
+            findNavController().navigate(action)
         }
 
         return binding.root

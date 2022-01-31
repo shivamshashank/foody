@@ -2,39 +2,40 @@ package com.example.foody
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.foody.databinding.ActivityMainBinding
-import com.example.foody.fragments.favorite.FavoriteRecipesFragment
-import com.example.foody.fragments.joke.FoodJokeFragment
-import com.example.foody.fragments.recipes.RecipesFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setCurrentFragment(RecipesFragment())
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+        navController = navHostFragment.navController
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.recipesFragment,
+                R.id.favoriteRecipesFragment,
+                R.id.foodJokeFragment
+            )
+        )
 
-        binding.bottomNavigationView.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.recipesFragment->setCurrentFragment(RecipesFragment())
-                R.id.favoriteRecipesFragment->setCurrentFragment(FavoriteRecipesFragment())
-                R.id.foodJokeFragment->setCurrentFragment(FoodJokeFragment())
-            }
-            true
-        }
-
+        binding.bottomNavigationView.setupWithNavController(navController)
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
-    private fun setCurrentFragment(fragment: Fragment) = supportFragmentManager.beginTransaction().apply {
-        replace(R.id.flFragment, fragment)
-        commit()
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
 }
