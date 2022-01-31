@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.foody.databinding.ActivityMainBinding
-import com.example.foody.fragments.FavoriteRecipesFragment
-import com.example.foody.fragments.FoodJokeFragment
-import com.example.foody.fragments.RecipesFragment
+import com.example.foody.fragments.favorite.FavoriteRecipesFragment
+import com.example.foody.fragments.joke.FoodJokeFragment
+import com.example.foody.fragments.recipes.RecipesFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

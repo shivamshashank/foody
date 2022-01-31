@@ -1,20 +1,20 @@
-package com.example.foody.fragments
+package com.example.foody.fragments.recipes
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.foody.view_models.MainViewModel
 import com.example.foody.adapters.RecipeAdapter
 import com.example.foody.databinding.FragmentRecipesBinding
 import com.example.foody.util.NetworkResult
 import com.example.foody.util.observeOnce
+import com.example.foody.view_models.MainViewModel
 import com.example.foody.view_models.RecipeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -42,6 +42,11 @@ class RecipesFragment : Fragment() {
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
         setupRecyclerView()
         readDatabase()
+
+        binding.recipesFloatingActionButton.setOnClickListener {
+            val fragment = RecipesBottomSheetFragment.newInstance()
+            fragment.show(activity?.supportFragmentManager!!,"RecipesBottomSheetFragment")
+        }
 
         return binding.root
     }

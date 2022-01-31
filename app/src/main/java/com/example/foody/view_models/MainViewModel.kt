@@ -17,8 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val repository: Repository,
     application: Application,
+    private val repository: Repository,
 ) : AndroidViewModel(application) {
 
     /** Room Database **/
@@ -41,7 +41,7 @@ class MainViewModel @Inject constructor(
                 recipesResponse.value = handleFoodRecipesResponse(response)
 
                 val foodRecipe = recipesResponse.value!!.data
-                if(foodRecipe != null){
+                if (foodRecipe != null) {
                     offlineCacheRecipe(foodRecipe)
                 }
             } catch (e: Exception) {
