@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/gradient_overlay.xml" value="0.1975" />
+        <entry key="app/src/main/res/drawable/ic_menu_book_100.xml" value="0.2105" />
         <entry key="app/src/main/res/drawable/ic_restaurant.xml" value="0.223" />
         <entry key="app/src/main/res/drawable/ic_sad.xml" value="0.224" />
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.17051282051282052" />
@@ -18,7 +19,9 @@
         <entry key="app/src/main/res/layout/ingredients_row_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/recipe_row_layout.xml" value="0.4309432983398438" />
         <entry key="app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.25" />
+        <entry key="app/src/main/res/menu-v26/details_menu.xml" value="0.15925925925925927" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1685185185185185" />
+        <entry key="app/src/main/res/menu/details_menu.xml" value="0.15925925925925927" />
         <entry key="app/src/main/res/menu/recipes_menu.xml" value="0.17393162393162392" />
       </map>
     </option>

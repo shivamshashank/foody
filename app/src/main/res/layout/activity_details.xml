@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.DetailsActivity">
@@ -26,11 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimary"
+            android:contentDescription="@string/details_activity_tab_layout"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:tabIndicatorColor="@color/white"
             app:tabIndicatorHeight="2dp"
-            app:tabTextColor="@color/white"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:contentDescription="@string/details_activity_tab_layout" />
+            app:tabTextColor="@color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -38,10 +39,10 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:contentDescription="@string/details_activity_view_pager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBar"
-        android:contentDescription="@string/details_activity_view_pager"/>
+        app:layout_constraintTop_toBottomOf="@+id/appBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

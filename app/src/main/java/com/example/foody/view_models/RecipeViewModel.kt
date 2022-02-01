@@ -1,6 +1,5 @@
 package com.example.foody.view_models
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.foody.data.DataStoreRepository
