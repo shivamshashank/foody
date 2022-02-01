@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.overview.OverviewFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:contentDescription="@string/recipe_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/gradient_overlay"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/likeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="12dp"
+            android:text="@string/_100"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:drawableTint="@color/white"
+            app:drawableTopCompat="@drawable/ic_heart"
+            tools:ignore="RtlSymmetry,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_100"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:drawableTint="@color/white"
+            app:drawableTopCompat="@drawable/ic_clock"
+            tools:ignore="TextContrastCheck" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/courgette"
+        android:maxLines="1"
+        android:text="@string/details_activity_tab_layout"
+        android:textColor="@color/darkGray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexboxLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:layout_editor_absoluteX="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/veganTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:drawablePadding="6dp"
+                android:text="@string/vegan"
+                android:textColor="@color/darkGray"
+                android:textSize="16sp"
+                app:drawableLeftCompat="@drawable/ic_check_circle"
+                app:drawableTint="@color/darkGray" />
+
+            <TextView
+                android:id="@+id/vegetarianTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:text="@string/vegetarian"
+                android:textColor="@color/darkGray"
+                android:textSize="16sp"
+                app:drawableLeftCompat="@drawable/ic_check_circle"
+                app:drawableTint="@color/darkGray" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dairyFreeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:drawablePadding="6dp"
+                android:text="@string/dairy_free"
+                android:textColor="@color/darkGray"
+                android:textSize="16sp"
+                app:drawableLeftCompat="@drawable/ic_check_circle"
+                app:drawableTint="@color/darkGray" />
+
+            <TextView
+                android:id="@+id/glutenFreeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:text="@string/gluten_free"
+                android:textColor="@color/darkGray"
+                android:textSize="16sp"
+                app:drawableLeftCompat="@drawable/ic_check_circle"
+                app:drawableTint="@color/darkGray" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/healthyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:drawablePadding="6dp"
+                android:text="@string/healthy"
+                android:textColor="@color/darkGray"
+                android:textSize="16sp"
+                app:drawableLeftCompat="@drawable/ic_check_circle"
+                app:drawableTint="@color/darkGray" />
+
+            <TextView
+                android:id="@+id/cheapTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:text="@string/cheap"
+                android:textColor="@color/darkGray"
+                android:textSize="16sp"
+                app:drawableLeftCompat="@drawable/ic_check_circle"
+                app:drawableTint="@color/darkGray" />
+
+        </LinearLayout>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/flexboxLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/summaryTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sed_ut_perspiciatis_unde_omnis_iste_natus_error_sit_voluptatem_accusantium_doloremque_laudantium_totam_rem_aperiam_eaque_ipsa_quae_ab_illo_inventore_veritatis_et_quasi_architecto_beatae_vitae_dicta_sunt_explicabo_nemo_enim_ipsam_voluptatem_quia_voluptas_sit_aspernatur_aut_odit_aut_fugit_sed_quia_consequuntur_magni_dolores_eos_qui_ratione_voluptatem_sequi_nesciunt_neque_porro_quisquam_est_qui_dolorem_ipsum_quia_dolor_sit_amet_consectetur_adipisci_velit_sed_quia_non_numquam_eius_modi_tempora_incidunt_ut_labore_et_dolore_magnam_aliquam_quaerat_voluptatem_ut_enim_ad_minima_veniam_quis_nostrum_exercitationem_ullam_corporis_suscipit_laboriosam_nisi_ut_aliquid_ex_ea_commodi_consequatur_quis_autem_vel_eum_iure_reprehenderit_qui_in_ea_voluptate_velit_esse_quam_nihil_molestiae_consequatur_vel_illum_qui_dolorem_eum_fugiat_quo_voluptas_nulla_pariatur_but_i_must_explain_to_you_how_all_this_mistaken_idea_of_denouncing_pleasure_and_praising_pain_was_born_and_i_will_give_you_a_complete_account_of_the_system_and_expound_the_actual_teachings_of_the_great_explorer_of_the_truth_the_master_builder_of_human_happiness_no_one_rejects_dislikes_or_avoids_pleasure_itself_because_it_is_pleasure_but_because_those_who_do_not_know_how_to_pursue_pleasure_rationally_encounter_consequences_that_are_extremely_painful_nor_again_is_there_anyone_who_loves_or_pursues_or_desires_to_obtain_pain_of_itself_because_it_is_pain_but_because_occasionally_circumstances_occur_in_which_toil_and_pain_can_procure_him_some_great_pleasure_to_take_a_trivial_example_which_of_us_ever_undertakes_laborious_physical_exercise_except_to_obtain_some_advantage_from_it_but_who_has_any_right_to_find_fault_with_a_man_who_chooses_to_enjoy_a_pleasure_that_has_no_annoying_consequences_or_one_who_avoids_a_pain_that_produces_no_resultant_pleasure" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
