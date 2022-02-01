@@ -11,6 +11,7 @@ import coil.load
 import com.example.foody.R.color.green
 import com.example.foody.databinding.FragmentOverviewBinding
 import com.example.foody.models.food_recipe.Result
+import com.example.foody.util.Constants.Companion.RECIPE_RESULT_KEY
 import org.jsoup.Jsoup
 
 class OverviewFragment : Fragment() {
@@ -25,7 +26,7 @@ class OverviewFragment : Fragment() {
         _binding = FragmentOverviewBinding.inflate(inflater, container, false)
 
         val args = arguments
-        val recipeBundle: Result? = args?.getParcelable("recipeBundle")
+        val recipeBundle: Result? = args?.getParcelable(RECIPE_RESULT_KEY)
 
         binding.imageView.load(recipeBundle?.image)
         binding.likeTextView.text = recipeBundle?.aggregateLikes.toString()
