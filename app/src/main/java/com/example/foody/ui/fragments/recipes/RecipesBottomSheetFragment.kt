@@ -1,4 +1,4 @@
-package com.example.foody.fragments.recipes
+package com.example.foody.ui.fragments.recipes
 
 import android.os.Bundle
 import android.util.Log

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.example.foody.fragments.recipes.RecipesFragment"
+        android:name="com.example.foody.ui.fragments.recipes.RecipesFragment"
         android:label="@string/recipes"
         tools:layout="@layout/fragment_recipes" >
         <action
@@ -17,25 +17,37 @@
             android:name="backFromBottomSheet"
             app:argType="boolean"
             android:defaultValue="false" />
+        <action
+            android:id="@+id/action_recipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
     </fragment>
     <fragment
         android:id="@+id/favoriteRecipesFragment"
-        android:name="com.example.foody.fragments.favorite.FavoriteRecipesFragment"
+        android:name="com.example.foody.ui.fragments.favorite.FavoriteRecipesFragment"
         android:label="@string/favorite"
         tools:layout="@layout/fragment_favorite_recipes" />
     <fragment
         android:id="@+id/foodJokeFragment"
-        android:name="com.example.foody.fragments.joke.FoodJokeFragment"
+        android:name="com.example.foody.ui.fragments.joke.FoodJokeFragment"
         android:label="@string/joke"
         tools:layout="@layout/fragment_food_joke" />
     <dialog
         android:id="@+id/recipesBottomSheetFragment"
-        android:name="com.example.foody.fragments.recipes.RecipesBottomSheetFragment"
+        android:name="com.example.foody.ui.fragments.recipes.RecipesBottomSheetFragment"
         android:label="fragment_recipes_bottom_sheet"
         tools:layout="@layout/fragment_recipes_bottom_sheet" >
         <action
             android:id="@+id/action_recipesBottomSheetFragment_to_recipesFragment"
             app:destination="@id/recipesFragment" />
     </dialog>
+    <activity
+        android:id="@+id/detailsActivity"
+        android:name="com.example.foody.ui.activities.DetailsActivity"
+        android:label="activity_details"
+        tools:layout="@layout/activity_details" >
+        <argument
+            android:name="result"
+            app:argType="com.example.foody.models.food_recipe.Result" />
+    </activity>
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.foody.fragments.favorite
+package com.example.foody.ui.fragments.favorite
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

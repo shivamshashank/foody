@@ -13,6 +13,7 @@
         android:id="@+id/recipeRowLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        onRecipeClickListener="@{result}"
         android:padding="8dp">
 
         <com.google.android.material.card.MaterialCardView
@@ -69,7 +70,7 @@
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
                         android:maxLines="3"
-                        android:text="@{result.summary}"
+                        parseHtml="@{result.summary}"
                         android:textColor="@color/darkGray" />
 
                     <LinearLayout
