@@ -28,7 +28,6 @@ android {
     }
 
     buildFeatures {
-        dataBinding true
         viewBinding true
     }
 
@@ -70,10 +69,6 @@ dependencies {
     kapt "androidx.room:room-compiler:2.4.1"
     implementation "androidx.room:room-ktx:2.4.1"
     androidTestImplementation "androidx.room:room-testing:2.4.1"
-
-    // Data binding
-    kapt "com.android.databinding:compiler:3.2.0-alpha10"
-    kapt "androidx.databinding:databinding-common:7.1.0"
 
     // DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"

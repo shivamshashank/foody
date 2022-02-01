@@ -1,6 +1,5 @@
 package com.example.foody.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -50,8 +49,6 @@ class IngredientAdapter : RecyclerView.Adapter<IngredientAdapter.MyViewHolder>()
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentIngredient = ingredientsList[position]
-        Log.e("ABCD", BASE_IMAGE_URL + currentIngredient.image)
-
         holder.bind(currentIngredient)
     }
 
