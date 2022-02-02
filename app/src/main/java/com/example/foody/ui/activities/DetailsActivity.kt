@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
-import android.widget.Toast.LENGTH_LONG
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -20,6 +18,7 @@ import com.example.foody.ui.fragments.instructions.InstructionsFragment
 import com.example.foody.ui.fragments.overview.OverviewFragment
 import com.example.foody.util.Constants.Companion.RECIPE_RESULT_KEY
 import com.example.foody.view_models.MainViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -63,7 +62,7 @@ class DetailsActivity : AppCompatActivity() {
         binding.viewPager.adapter = adapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
-    
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.details_menu, menu)
 
@@ -115,10 +114,10 @@ class DetailsActivity : AppCompatActivity() {
             )
         mainViewModel.insertFavoriteRecipe(favoritesEntity)
         changeFavoritesIconColor(item, R.color.yellow)
-        Toast.makeText(
-            applicationContext,
+        Snackbar.make(
+            binding.detailsLayout,
             "Recipe Saved.",
-            LENGTH_LONG,
+            Snackbar.LENGTH_LONG,
         ).show()
         recipeSaved = true
     }
@@ -131,10 +130,10 @@ class DetailsActivity : AppCompatActivity() {
             )
         mainViewModel.deleteFavoriteRecipe(favoritesEntity)
         changeFavoritesIconColor(item, R.color.white)
-        Toast.makeText(
-            applicationContext,
+        Snackbar.make(
+            binding.detailsLayout,
             "Removed from Favorites.",
-            LENGTH_LONG,
+            Snackbar.LENGTH_LONG,
         ).show()
         recipeSaved = false
     }

@@ -21,7 +21,9 @@
         <entry key="app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.25" />
         <entry key="app/src/main/res/menu-v26/details_menu.xml" value="0.15925925925925927" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1685185185185185" />
+        <entry key="app/src/main/res/menu/delete_all_favorites_menu.xml" value="0.15925925925925927" />
         <entry key="app/src/main/res/menu/details_menu.xml" value="0.15925925925925927" />
+        <entry key="app/src/main/res/menu/favorites_contextual_menu.xml" value="0.15925925925925927" />
         <entry key="app/src/main/res/menu/recipes_menu.xml" value="0.17393162393162392" />
       </map>
     </option>
