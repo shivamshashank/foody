@@ -78,11 +78,6 @@ class RecipesBottomSheetFragment : BottomSheetDialogFragment() {
         return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
     private fun updateChip(chipId: Int, chipGroup: ChipGroup) {
         if (chipId != 0) {
             try {
@@ -91,6 +86,11 @@ class RecipesBottomSheetFragment : BottomSheetDialogFragment() {
                 Log.d("RecipesBottomSheet", e.message.toString())
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }
